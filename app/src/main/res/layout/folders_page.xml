@@ -6,9 +6,15 @@
     android:background="@color/green_light"
     android:padding="20dp" >
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-        </ListView>
+<!--        <ListView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" >-->
+<!--                -->
+<!--        </ListView>-->
+
+
+<!--    TODO: here we will use ListView for Folders (for that we created folder.xml)-->
+<!--    The following codes are just to show what they will look like at the end-->
+
 
 </LinearLayout>
