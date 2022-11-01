@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.finalproject.HomePageFragment"
+        android:label="HomePageFragment"
+        tools:layout="@layout/fragment_home_page">
+        <action
+            android:id="@+id/action_homePageFragment_to_foldersPageFragment"
+            app:destination="@id/foldersPageFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
+
+<!--    TODO: Delete placeholder, put add_folder_page instead -->
+    <fragment
+        android:id="@+id/foldersPageFragment"
+        android:name="com.example.finalproject.FoldersPageFragment"
+        android:label="FoldersPageFragment"
+        tools:layout="@layout/fragment_folders_page">
+        <action
+            android:id="@+id/action_foldersPageFragment_to_flashcardPageFragment"
+            app:destination="@id/flashcardPageFragment" />
+        <action
+            android:id="@+id/action_foldersPageFragment_to_placeholder"
+            app:destination="@id/placeholder" />
+    </fragment>
+    <fragment
+        android:id="@+id/flashcardPageFragment"
+        android:name="com.example.finalproject.FlashcardPageFragment"
+        android:label="FlashcardPageFragment"
+        tools:layout="@layout/fragment_flashcard_page">
+        <action
+            android:id="@+id/action_flashcardPageFragment_to_memorizationFragment"
+            app:destination="@id/memorizationFragment" />
+        <action
+            android:id="@+id/action_flashcardPageFragment_to_addFlashcardFragment"
+            app:destination="@id/addFlashcardFragment" />
+    </fragment>
+    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/memorizationFragment"
+        android:name="com.example.finalproject.MemorizationFragment"
+        android:label="MemorizationFragment"
+        tools:layout="@layout/fragment_memorization"/>
+    <fragment
+        android:id="@+id/addFlashcardFragment"
+        android:name="com.example.finalproject.AddFlashcardFragment"
+        android:label="AddFlashcardFragment"
+        tools:layout="@layout/fragment_add_flashcard"/>
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.finalproject.NotesFragment"
+        android:label="NotesFragment"
+        tools:layout="@layout/fragment_notes">
+        <action
+            android:id="@+id/action_notesFragment_to_itemViewNote"
+            app:destination="@id/itemViewNote" />
+        <action
+            android:id="@+id/action_notesFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemViewNote"
+        android:name="com.example.finalproject.ItemViewNote"
+        android:label="ItemViewNote"
+        tools:layout="@layout/fragment_item_view_note"/>
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.example.finalproject.AddNoteFragment"
+        android:label="AddNoteFragment"
+        tools:layout="@layout/fragment_add_note"/>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.finalproject.MainActivity"
+        android:label="fragment_start_layout"
+        tools:layout="@layout/fragment_start_layout" />
+</navigation>
