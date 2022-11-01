@@ -10,7 +10,7 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
+        layout="@layout/fragment_toolbar"
         app:layout_constraintStart_toStartOf="parent"></include>
 
     <androidx.cardview.widget.CardView
