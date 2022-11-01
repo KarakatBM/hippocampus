@@ -4,8 +4,11 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/green_light"
-    android:paddingVertical="15dp">
+    android:background="@color/columbia_blue">
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/fragment_toolbar"
+        app:layout_constraintStart_toStartOf="parent"></include>
 
 
     <androidx.cardview.widget.CardView
@@ -34,7 +37,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
                 android:inputType="textLongMessage"
+                android:fontFamily="@font/poppinssemibold"
                 android:minHeight="48dp"
+                android:textColor="@color/hookers_green"
                 android:text="Question" />
 
             <EditText
@@ -44,7 +49,8 @@
                 android:layout_margin="15dp"
                 android:inputType="textLongMessage"
                 android:minHeight="48dp"
-                android:text="Answer" />
+                android:fontFamily="@font/poppinsregular"
+                android:hint="Answer" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -54,6 +60,7 @@
                 android:paddingVertical="10dp"
                 android:text="Add Card"
                 android:textAlignment="center"
+                android:backgroundTint="@color/maximum_blue_green"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
