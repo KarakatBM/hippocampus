@@ -32,6 +32,23 @@
         android:id="@+id/flashcardPageFragment"
         android:name="com.example.finalproject.FlashcardPageFragment"
         android:label="FlashcardPageFragment"
-        tools:layout="@layout/fragment_flashcard_page"/>
+        tools:layout="@layout/fragment_flashcard_page">
+        <action
+            android:id="@+id/action_flashcardPageFragment_to_memorizationFragment"
+            app:destination="@id/memorizationFragment" />
+        <action
+            android:id="@+id/action_flashcardPageFragment_to_addFlashcardFragment"
+            app:destination="@id/addFlashcardFragment" />
+    </fragment>
     <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/memorizationFragment"
+        android:name="com.example.finalproject.MemorizationFragment"
+        android:label="MemorizationFragment"
+        tools:layout="@layout/fragment_memorization"/>
+    <fragment
+        android:id="@+id/addFlashcardFragment"
+        android:name="com.example.finalproject.AddFlashcardFragment"
+        android:label="AddFlashcardFragment"
+        tools:layout="@layout/fragment_add_flashcard"/>
 </navigation>

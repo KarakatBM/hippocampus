@@ -29,7 +29,7 @@ class FoldersPageFragment : Fragment() {
             view.findNavController()
                 .navigate(R.id.action_foldersPageFragment_to_flashcardPageFragment) }
 
-        // Add OnClick Handler for Add Folder Button
+        // Add OnClick Handler for Add Folder button
         binding!!.addFolderButton.setOnClickListener{ view: View->
             view.findNavController()
                 .navigate(R.id.action_foldersPageFragment_to_placeholder) }
