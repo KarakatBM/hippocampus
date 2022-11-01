@@ -9,9 +9,14 @@
         android:orientation="vertical">
         <fragment
             android:id="@+id/homePageFragment"
-            android:name="com.example.finalproject.HomePageFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+<<<<<<< HEAD
             />
+=======
+            app:navGraph="@navigation/navigation"
+            app:defaultNavHost="true" />
+>>>>>>> cdbb0f509e0ab57c00cb7441e1f7ff357b71cb37
     </LinearLayout>
 </layout>
