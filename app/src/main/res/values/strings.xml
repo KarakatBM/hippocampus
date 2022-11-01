@@ -2,5 +2,11 @@
     <string name="app_name">Hippocampus</string>
     <string name="main_activity_title">Home page</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="todo1">lamborghini</string>
+    <string name="todo2">iphone 13 pro max 256gb</string>
+    <string name="todo3">pen</string>
+    <string name="todo4">paper</string>
+    <string name="todo5">book haruki murakami</string>
+    <string name="todo6">bullet journal</string>
+
 </resources>
