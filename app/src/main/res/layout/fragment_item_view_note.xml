@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -30,3 +31,10 @@
         tools:text="02.11.2022"/>
 
 </RelativeLayout>
+=======
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 7585fa9221441d030bf9c53922f22040468d7eec

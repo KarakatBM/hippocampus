@@ -16,4 +16,10 @@
 
     <color name="blue_light">#C4E0DE</color>
     <color name="blue_light_main">#2FC8B4</color>
+
+    <color name="columbia_blue">#C4E0DE</color>
+    <color name="maximum_blue_green">#2FC8B4</color>
+    <color name="hookers_green">#3D716E</color>
+    <color name="zomp">#3F9590</color>
+
 </resources>
