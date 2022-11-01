@@ -14,9 +14,24 @@
             android:id="@+id/action_homePageFragment_to_foldersPageFragment"
             app:destination="@id/foldersPageFragment" />
     </fragment>
+
+<!--    TODO: Delete placeholder, put add_folder_page instead -->
     <fragment
         android:id="@+id/foldersPageFragment"
         android:name="com.example.finalproject.FoldersPageFragment"
         android:label="FoldersPageFragment"
-        tools:layout="@layout/fragment_folders_page"/>
+        tools:layout="@layout/fragment_folders_page">
+        <action
+            android:id="@+id/action_foldersPageFragment_to_flashcardPageFragment"
+            app:destination="@id/flashcardPageFragment" />
+        <action
+            android:id="@+id/action_foldersPageFragment_to_placeholder"
+            app:destination="@id/placeholder" />
+    </fragment>
+    <fragment
+        android:id="@+id/flashcardPageFragment"
+        android:name="com.example.finalproject.FlashcardPageFragment"
+        android:label="FlashcardPageFragment"
+        tools:layout="@layout/fragment_flashcard_page"/>
+    <fragment android:id="@+id/placeholder" />
 </navigation>

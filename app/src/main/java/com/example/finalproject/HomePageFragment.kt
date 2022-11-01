@@ -24,6 +24,6 @@ class HomePageFragment : Fragment() {
             view.findNavController()
                 .navigate(R.id.action_homePageFragment_to_foldersPageFragment) }
 
-    return binding.root
+        return binding.root
     }
 }

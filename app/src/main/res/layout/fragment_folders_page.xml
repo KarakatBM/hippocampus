@@ -17,7 +17,7 @@
 <!--    The following codes are just to show what they will look like at the end-->
 
     <LinearLayout
-
+        android:id="@+id/folder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
