@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/titletextview"
+        android:id="@+id/add_title_text"
         android:text="Add new note"
         android:textSize="25dp"
         android:gravity="center"
