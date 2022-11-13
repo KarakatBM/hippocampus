@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homePageFragment"
         android:name="com.example.finalproject.HomePageFragment"
-        android:label="HomePageFragment"
+        android:label="Hippocampus"
         tools:layout="@layout/fragment_home_page">
         <action
             android:id="@+id/action_homePageFragment_to_foldersPageFragment"
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/foldersPageFragment"
         android:name="com.example.finalproject.FoldersPageFragment"
-        android:label="FoldersPageFragment"
+        android:label="Folders"
         tools:layout="@layout/fragment_folders_page">
         <action
             android:id="@+id/action_foldersPageFragment_to_flashcardPageFragment"
@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.example.finalproject.NotesFragment"
-        android:label="NotesFragment"
+        android:label="Notes"
         tools:layout="@layout/fragment_notes">
         <action
             android:id="@+id/action_notesFragment_to_itemViewNote"
@@ -81,4 +81,9 @@
         android:name="com.example.finalproject.MainActivity"
         android:label="fragment_start_layout"
         tools:layout="@layout/fragment_start_layout" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.finalproject.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>
