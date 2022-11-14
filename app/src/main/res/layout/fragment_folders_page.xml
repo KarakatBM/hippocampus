@@ -33,6 +33,7 @@
                 android:layout_marginEnd="25dp"/>
 
             <Button
+                android:id="@+id/add_module"
                 android:layout_width="wrap_content"
                 android:layout_height="38dp"
                 android:background="@drawable/rounded_button"
@@ -62,5 +63,6 @@
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintTop_toBottomOf="@id/modulesCard"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="25dp"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

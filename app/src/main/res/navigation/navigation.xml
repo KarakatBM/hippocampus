@@ -25,8 +25,8 @@
         android:label="Folders"
         tools:layout="@layout/fragment_folders_page">
         <action
-            android:id="@+id/action_foldersPageFragment_to_flashcardPageFragment"
-            app:destination="@id/flashcardPageFragment" />
+            android:id="@+id/action_foldersPageFragment_to_folderFragment"
+            app:destination="@id/folderFragment" />
         <action
             android:id="@+id/action_foldersPageFragment_to_placeholder"
             app:destination="@id/placeholder" />
@@ -86,4 +86,14 @@
         android:name="com.example.finalproject.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/folderFragment"
+        android:name="com.example.finalproject.FolderFragment"
+        android:label="FolderFragment"
+        tools:layout="@layout/fragment_folder"
+        >
+        <action
+            android:id="@+id/action_folderFragment_to_flashcardPageFragment"
+            app:destination="@id/flashcardPageFragment" />
+    </fragment>
 </navigation>

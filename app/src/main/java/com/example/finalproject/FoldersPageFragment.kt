@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject.adapter.ModulesItemAdapter
@@ -32,10 +33,10 @@ class FoldersPageFragment : Fragment() {
 //            view.findNavController()
 //                .navigate(R.id.action_foldersPageFragment_to_flashcardPageFragment) }
 //
-//        // Add OnClick Handler for Add Folder button
-//        binding!!.addFolderButton.setOnClickListener{ view: View->
-//            view.findNavController()
-//                .navigate(R.id.action_foldersPageFragment_to_placeholder) }
+        // Add OnClick Handler for Add Folder button
+        binding!!.addModule.setOnClickListener{ view: View->
+            view.findNavController()
+                .navigate(R.id.action_foldersPageFragment_to_placeholder) }
 
 //        TODO: Delete placeholder, put add_folder_page instead
         // Initialize data.
@@ -55,23 +56,4 @@ class FoldersPageFragment : Fragment() {
         }
     }
 
-
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        val myDataset = DatasourceModules().loadmodules()
-//
-//        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerview)
-//        recyclerView.adapter = ModulesItemAdapter(context, myDataset)
-//
-//        recyclerView.setHasFixedSize(true)
-//    }
-////    override fun onAttach(context: Context?) {
-////        super.onAttach(context)
-////        context = activity
-////    }
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//
-//    }
 }

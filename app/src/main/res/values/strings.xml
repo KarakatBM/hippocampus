@@ -8,6 +8,21 @@
     <string name="todo4">paper</string>
     <string name="todo5">book haruki murakami</string>
     <string name="todo6">bullet journal</string>
+
+    <string name="module1">Biology</string>
+    <string name="module2">History</string>
+    <string name="module3">Mobile</string>
+    <string name="module4">Networks</string>
+    <string name="module5">Java</string>
+    <string name="module6">Leadership</string>
+
+    <string name="card1q">What is hippocampus?</string>
+    <string name="card2q">Dorsal</string>
+    <string name="card3q">Proximal</string>
+
+    <string name="card1a">The hippocampus (via Latin from Greek ἱππόκαμπος, \'seahorse\') is a major component of the brain of humans and other vertebrates. Humans and other mammals have two hippocampi, one in each side of the brain.</string>
+    <string name="card2a">Towards the back of the body</string>
+    <string name="card3a">Midline of the body</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
