@@ -81,4 +81,14 @@
         android:name="com.example.finalproject.MainActivity"
         android:label="fragment_start_layout"
         tools:layout="@layout/fragment_start_layout" />
+    <fragment
+        android:id="@+id/fragmentTodo"
+        android:name="com.example.finalproject.FragmentTodo"
+        android:label="FragmentTodo" />
+    <fragment
+        android:id="@+id/toolbarFragment"
+        android:name="com.example.finalproject.ToolbarFragment"
+        android:label="fragment_toolbar"
+        tools:layout="@layout/fragment_toolbar"
+        />
 </navigation>
