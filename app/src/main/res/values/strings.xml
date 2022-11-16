@@ -26,4 +26,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="folder_text">Flashcard</string>
+    <string name="pomodoro_text">Pomodoro</string>
+    <string name="note_text">Note</string>
+    <string name="todo_text">Todo</string>
+    <string name="home_text">Home</string>
+
+
 </resources>

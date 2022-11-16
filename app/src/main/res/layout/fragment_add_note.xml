@@ -8,7 +8,10 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/fragment_toolbar"
-        app:layout_constraintStart_toStartOf="parent"></include>
+        app:layout_constraintStart_toStartOf="parent">
+
+    </include>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,8 +19,8 @@
         android:text="Add new note"
         android:textSize="25dp"
         android:gravity="center"
-        android:layout_margin="20dp"
-        android:fontFamily="@font/poppinsbold"
+        android:layout_margin="10dp"
+        android:textColor="@color/hookers_green"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,25 +29,56 @@
         android:padding="18dp"
         android:layout_margin="10dp">
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/titleoutput"
+            android:layout_width="340dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="0dp"
+            app:cardBackgroundColor="@color/columbia_blue"
+            app:cardCornerRadius="19dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/titleinput"
             android:hint="Title"
+            android:textColor="@color/hookers_green"
             android:fontFamily="@font/poppinssemibold"
-            android:padding="18dp"
-            android:layout_margin="10dp"/>
+            android:padding="1dp"
+            android:layout_margin="15dp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+        android:id="@+id/descriptionoutput"
+        android:layout_width="340dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="25dp"
+        app:cardBackgroundColor="@color/columbia_blue"
+        app:cardCornerRadius="19dp"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/descriptioninput"
             android:fontFamily="@font/poppinssemibold"
             android:hint="Description"
-            android:padding="18dp"
+            android:padding="8dp"
             android:layout_margin="10dp"
-            android:lines="5"
-            android:gravity="top"/>
+            android:lines="1"
+            android:textColor="@color/hookers_green"/>
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
+
 
     <com.google.android.material.button.MaterialButton
         android:layout_height="wrap_content"
@@ -62,4 +96,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:fontFamily="@font/poppinsbold"/>
-</LinearLayout>
+
+
+    <include
+        android:id="@+id/menu"
+        layout="@layout/fragment_menu"
+        app:layout_constraintStart_toStartOf="parent">
+   </include>
+    </LinearLayout>
