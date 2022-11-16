@@ -1,27 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="20dp">
-
-
-    <!--TODO: add to icons for setings (like add, delete, etc)-->
-
-    <ImageView
-        android:id="@+id/folder_icon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:srcCompat="@drawable/folder"
-        />
-    <TextView
-        android:id="@+id/folder_name1"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/folderHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Folder Name 1"
-        android:textSize="20sp"
-        android:layout_marginLeft="20dp"
-        />
+        app:cardBackgroundColor="@color/columbia_blue"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="25dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="15dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Biology"
+                android:textSize="25sp"
+                android:textColor="@color/hookers_green"
+                android:layout_marginEnd="25dp"/>
 
-</LinearLayout>
+            <Button
+                android:id="@+id/add_module"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:background="@drawable/rounded_button"
+                android:text="PRACTICE"
+                android:textColor="@color/white"
+                android:layout_marginEnd="5dp"
+
+                />
+
+            <ImageView
+                android:layout_width="41dp"
+                android:layout_height="39dp"
+                android:src="@drawable/add" />
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/folder_recycler_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/folderHeader" />
+    <include
+        android:id="@+id/bottom_menu"
+        layout="@layout/fragment_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+    </include>
+</androidx.constraintlayout.widget.ConstraintLayout>
