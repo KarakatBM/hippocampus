@@ -73,7 +73,7 @@
     </androidx.cardview.widget.CardView>
     <include
         android:id="@+id/menu"
-        layout="@layout/fragment_menu"
+        layout="@layout/menu_bottom"
         app:layout_constraintStart_toStartOf="parent">
     </include>
 </androidx.constraintlayout.widget.ConstraintLayout>

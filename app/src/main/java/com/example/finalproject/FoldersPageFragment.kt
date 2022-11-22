@@ -4,11 +4,11 @@ package com.example.finalproject
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject.adapter.ModulesItemAdapter
@@ -41,7 +41,11 @@ class FoldersPageFragment : Fragment() {
 //        TODO: Delete placeholder, put add_folder_page instead
         // Initialize data.
 
-        
+
+        binding!!.bottomMenu.setOnItemSelectedListener {
+            onNavDestinationSelected(it,requireView().findNavController())
+                    || super.onOptionsItemSelected(it)
+        }
         return binding!!.root
     }
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
@@ -55,5 +59,14 @@ class FoldersPageFragment : Fragment() {
             adapter = ModulesItemAdapter(context,myDataset)
         }
     }
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        super.onCreateOptionsMenu(menu, inflater)
+//        inflater.inflate(R.menu.nav_menu2, menu)
+//    }
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        return NavigationUI.
+//        onNavDestinationSelected(item,requireView().findNavController())
+//                || super.onOptionsItemSelected(item)
+//    }
 
 }
