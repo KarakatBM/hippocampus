@@ -9,30 +9,37 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.example.finalproject.databinding.FragmentFolderBinding
 import com.example.finalproject.databinding.FragmentHomePageBinding
 
 class HomePageFragment : Fragment() {
+    private var binding: FragmentHomePageBinding? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
-        val binding: FragmentHomePageBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_home_page, container, false)
+//        val binding: FragmentHomePageBinding = DataBindingUtil.inflate(
+//            inflater, R.layout.fragment_home_page, container, false)
+
+        binding = FragmentHomePageBinding.inflate(inflater, container, false)
 
         // Add OnClick Handler for CardViews
-        binding.cardFlashcards.setOnClickListener{ view: View->
+        binding!!.cardFlashcards.setOnClickListener{ view: View->
             view.findNavController()
                 .navigate(R.id.action_homePageFragment_to_foldersPageFragment) }
 
         //   TODO: Implement other handlers
 
-        binding.notes.setOnClickListener{ view: View->
+        binding!!.notes.setOnClickListener{ view: View->
             view.findNavController()
                 .navigate(R.id.action_homePageFragment_to_notesFragment) }
 
 
 
 
-        return binding.root
+
+
+
+        return binding!!.root
     }
 }

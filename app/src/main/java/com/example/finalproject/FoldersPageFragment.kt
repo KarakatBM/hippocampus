@@ -42,10 +42,7 @@ class FoldersPageFragment : Fragment() {
         // Initialize data.
 
 
-        binding!!.bottomMenu.setOnItemSelectedListener {
-            onNavDestinationSelected(it,requireView().findNavController())
-                    || super.onOptionsItemSelected(it)
-        }
+
         return binding!!.root
     }
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
