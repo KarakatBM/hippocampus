@@ -5,6 +5,7 @@
     android:id="@+id/navigation"
     app:startDestination="@id/homePageFragment">
 
+
     <fragment
         android:id="@+id/homePageFragment"
         android:name="com.example.finalproject.HomePageFragment"
@@ -21,7 +22,7 @@
             app:destination="@id/pomodoroFragment" />
     </fragment>
 
-<!--    TODO: Delete placeholder, put add_folder_page instead -->
+    <!--    TODO: Delete placeholder, put add_folder_page instead -->
     <fragment
         android:id="@+id/foldersPageFragment"
         android:name="com.example.finalproject.FoldersPageFragment"
@@ -51,12 +52,12 @@
         android:id="@+id/memorizationFragment"
         android:name="com.example.finalproject.MemorizationFragment"
         android:label="MemorizationFragment"
-        tools:layout="@layout/fragment_memorization"/>
+        tools:layout="@layout/fragment_memorization" />
     <fragment
         android:id="@+id/addFlashcardFragment"
         android:name="com.example.finalproject.AddFlashcardFragment"
         android:label="AddFlashcardFragment"
-        tools:layout="@layout/fragment_add_flashcard"/>
+        tools:layout="@layout/fragment_add_flashcard" />
     <fragment
         android:id="@+id/notesFragment"
         android:name="com.example.finalproject.NotesFragment"
@@ -73,12 +74,12 @@
         android:id="@+id/itemViewNote"
         android:name="com.example.finalproject.ItemViewNote"
         android:label="ItemViewNote"
-        tools:layout="@layout/fragment_item_view_note"/>
+        tools:layout="@layout/fragment_item_view_note" />
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.example.finalproject.AddNoteFragment"
         android:label="AddNoteFragment"
-        tools:layout="@layout/fragment_add_note"/>
+        tools:layout="@layout/fragment_add_note" />
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.finalproject.MainActivity"
@@ -92,8 +93,7 @@
         android:id="@+id/toolbarFragment"
         android:name="com.example.finalproject.ToolbarFragment"
         android:label="fragment_toolbar"
-        tools:layout="@layout/fragment_toolbar"
-        />
+        tools:layout="@layout/fragment_toolbar" />
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.finalproject.AboutFragment"
@@ -103,16 +103,17 @@
         android:id="@+id/folderFragment"
         android:name="com.example.finalproject.FolderFragment"
         android:label="FolderFragment"
-        tools:layout="@layout/fragment_folder"
-        >
+        tools:layout="@layout/fragment_folder">
         <action
             android:id="@+id/action_folderFragment_to_flashcardPageFragment"
             app:destination="@id/flashcardPageFragment" />
     </fragment>
     <fragment
+
         android:id="@+id/pomodoroFragment"
         android:name="com.example.finalproject.PomodoroFragment"
         android:label="PomodoroFragment"
         tools:layout = "@layout/fragment_pomodoro"/>
+
 
 </navigation>
