@@ -26,12 +26,13 @@ class HomePageFragment : Fragment() {
 
         //   TODO: Implement other handlers
 
-        binding.notes.setOnClickListener{ view: View->
+        binding.cardNotes.setOnClickListener{ view: View->
             view.findNavController()
                 .navigate(R.id.action_homePageFragment_to_notesFragment) }
 
-
-
+        binding.cardPomodoro.setOnClickListener{ view: View->
+            view.findNavController()
+                .navigate(R.id.action_homePageFragment_to_pomodoroFragment) }
 
         return binding.root
     }

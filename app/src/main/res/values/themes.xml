@@ -18,5 +18,9 @@
 <!--    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">-->
 <!--        <item name="android:fontFamily">@font/poppinsbold</item>-->
 <!--    </style>-->
+
+    <style name="ShapeAppearanceOverlay.App.rounded" parent="">
+        <item name="cornerSize">20%</item>
+    </style>
 </resources>
 
