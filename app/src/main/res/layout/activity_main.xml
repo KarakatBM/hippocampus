@@ -33,7 +33,7 @@
             app:itemIconTint="@drawable/item_menu_selector"
             app:itemRippleColor="@color/columbia_blue"
             app:labelVisibilityMode="unlabeled"
-            app:menu="@menu/nav_menu2"
+            app:menu="@menu/nav_bottommenu"
             />
         </androidx.constraintlayout.widget.ConstraintLayout>
         <com.google.android.material.navigation.NavigationView

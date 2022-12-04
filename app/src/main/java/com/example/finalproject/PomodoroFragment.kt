@@ -2,6 +2,8 @@ package com.example.finalproject
 
 
 
+
+
 import android.os.Bundle
 import android.os.Looper
 import androidx.fragment.app.Fragment
@@ -13,22 +15,15 @@ import androidx.navigation.findNavController
 import com.example.finalproject.databinding.FragmentPomodoroBinding
 import android.os.Handler
 import android.service.autofill.Validators.not
+import androidx.fragment.app.viewModels
+import com.example.finalproject.viewmodel.PomodoroViewModel
+import kotlin.time.Duration.Companion.seconds
 
 class PomodoroFragment : Fragment() {
-      private var handler = Handler(Looper.getMainLooper())
-      private lateinit var runnable: Runnable
-    val pomodorosArray = arrayOf(0,3,4)
-    val restArray = arrayOf(5,10,15)
+    private val viewModel: PomodoroViewModel by viewModels()
+    private var handler = Handler(Looper.getMainLooper())
+    private lateinit var runnable: Runnable
 
-    var initialMins = pomodorosArray[0]
-    private var i = 0
-    private var j = 0
-    var initialSeconds = 5
-    var mins = initialMins
-    var seconds = initialSeconds
-    var status = "wait"
-    var restMins = restArray[i]
-    var mode = "focus"
 
     private var binding: FragmentPomodoroBinding? = null
 
@@ -37,21 +32,19 @@ class PomodoroFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         binding = FragmentPomodoroBinding.inflate(inflater, container, false)
+
         //initial timer 25 mins
         binding!!.startButton.setOnClickListener{
-            if(status == "wait"){
+            if(viewModel.status.value == "wait"){
                 onTimerStarted()
             }
             else {
                 onTimerStopped()
             }
-
         }
 
 
-
         binding!!.timer.setOnClickListener{
-
             handleTimerLength()
         }
 
@@ -59,9 +52,6 @@ class PomodoroFragment : Fragment() {
         binding!!.skipButton.setOnClickListener{
             handleSkipButton()
         }
-
-
-
 
         return binding!!.root
     }
@@ -72,50 +62,22 @@ class PomodoroFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        updateTimer(mins,seconds)
+        updateTimer(viewModel.mins.value!!,viewModel.seconds.value!!)
     }
 
     private fun handleTimerLength() {
-        if(mode == "focus"){
-            if (i == pomodorosArray.size-1){
-            i = 0
-        }
-            initialMins = pomodorosArray[++i]
-            restMins = restArray[i]
-
-            mins = initialMins
-            seconds = initialSeconds
-
-        }
-        else if(status == "rest"){
-            if (j == pomodorosArray.size-1){
-                j = 0
-            }
-            restMins = restArray[j++]
-            seconds = initialSeconds
-        }
-        updateTimer(mins, seconds)
-        
-
-
+       viewModel.handleTimerLength()
     }
 
     private fun onTimerStarted() {
-        status = "started"
+        viewModel.setStartStatus()
         binding!!.startButton.text ="STOP"
 
         runnable = Runnable {
-            if(seconds != 0){
-                seconds--
-            } else {
-                seconds = 59
-                mins--
-            }
-            updateTimer(mins,seconds)
+            viewModel.decreaseTimer()
 
-            if(mins == 0 && seconds  == 0){
+            if(viewModel.mins.value == 0 && viewModel.seconds.value  == 0){
                 onTimerStopped()
-
             }else{
                 handler.postDelayed(runnable, 1000)
             }
@@ -124,36 +86,33 @@ class PomodoroFragment : Fragment() {
     }
 
     private fun onTimerStopped() {
+        viewModel.setStopStatus()
         binding!!.startButton.text ="START"
         handler.removeCallbacks(runnable)
 
 
-        if(mode == "rest"){
-            switchFocusMode()
-        }
-        else if(mode == "focus"){
-            switchRestMode()
+        when(viewModel.mode.value){
+            "focus" ->  switchRestMode()
+            "rest" ->  switchFocusMode()
+            else -> print("OK")
         }
 
-        status = "wait"
     }
 
 
     private fun switchFocusMode() {
-        mode = "focus"
-        mins = initialMins
-        seconds = initialSeconds
-        updateTimer(mins,seconds)
+        viewModel.setModeFocus()
+        viewModel.resetFocusTimer()
+
+//        updateTimer(mins,seconds)
 
         binding!!.pomodoroImage.setImageResource(R.drawable.pomodoro)
         binding!!.skipButton.visibility =  View.GONE
     }
 
     private fun switchRestMode() {
-        mode = "rest"
-        mins = restMins
-        seconds = initialSeconds
-        updateTimer(mins,seconds)
+        viewModel.setModeRest()
+        viewModel.resetRestTimer()
 
         binding!!.pomodoroImage.setImageResource(R.drawable.sleep)
         binding!!.skipButton.visibility =  View.VISIBLE
@@ -167,7 +126,13 @@ class PomodoroFragment : Fragment() {
 
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
         super.onViewCreated(itemView, savedInstanceState)
-
+        viewModel.seconds.observe(viewLifecycleOwner
+        ) { newSecond ->
+            updateTimer(viewModel.mins.value!!, newSecond)
+        }
+        if(viewModel.status.value=="start"){
+            onTimerStarted()
+        }
     }
 
 }
