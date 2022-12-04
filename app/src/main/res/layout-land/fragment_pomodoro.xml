@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="@color/gray_background">
+
+    <TextView
+        android:id="@+id/keyscount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="7sp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="0"
+
+
+        android:textColor="@color/hookers_green"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@id/keyLogo"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/keyLogo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="25sp"
+        android:layout_marginEnd="7sp"
+        android:src="@drawable/key"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/pomodoroImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:elevation="20dp"
+        android:src="@drawable/pomodoro"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.718"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.587"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsextrabold"
+        android:text="25:00"
+        android:textColor="@color/maximum_blue_green"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/start_button"
+        app:layout_constraintEnd_toStartOf="@+id/pomodoroImage"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/skip_button"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button_gray"
+        android:elevation="10dp"
+        android:text="SKIP"
+
+
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/start_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/start_button"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+
+        android:elevation="10dp"
+        android:text="START"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pomodoroImage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/skip_button"
+        app:layout_constraintTop_toBottomOf="@+id/timer"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
