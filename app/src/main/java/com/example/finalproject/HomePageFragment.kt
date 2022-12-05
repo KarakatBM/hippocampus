@@ -48,8 +48,10 @@ class HomePageFragment : Fragment() {
 
         }
 
-            return binding!!.root
-        }
+        return binding!!.root
     }
+}
+
+
 
 

@@ -12,21 +12,23 @@ buildscript {
         gradleVersion = '4.0.1'
         dataBindingCompilerVersion = gradleVersion
     }
-repositories {
-    google()
-    mavenCentral()
-}
-dependencies {
-    classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
-    classpath 'com.android.tools.build:gradle:3.2.1'
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    classpath("gradle.plugin.se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.71.4"){
-        exclude group: "org.ow2.asm"
+    repositories {
+        google()
+        mavenCentral()
     }
-}
+    dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath("gradle.plugin.se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.71.4"){
+            exclude group: "org.ow2.asm"
+        }
+    }
 }
 plugins {
     id 'com.android.application' version '7.3.0' apply false
     id 'com.android.library' version '7.3.0' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+
+
 }

@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
                 binding.bottomMenu2.visibility = View.VISIBLE
             }
         }
+
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
     }
