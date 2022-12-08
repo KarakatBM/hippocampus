@@ -64,30 +64,22 @@
         android:label="Notes"
         tools:layout="@layout/fragment_notes">
         <action
-            android:id="@+id/action_notesFragment_to_addNoteFragment"
-            app:destination="@id/addNoteFragment" />
+            android:id="@+id/action_notesFragment_to_itemViewNote"
+            app:destination="@id/itemViewNote" />
         <action
-            android:id="@+id/action_notesFragment_to_addNoteFragment2"
+            android:id="@+id/action_notesFragment_to_addNoteFragment"
             app:destination="@id/addNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/itemViewNote"
         android:name="com.example.finalproject.ItemViewNote"
         android:label="ItemViewNote"
-        tools:layout="@layout/fragment_item_view_note" >
-        <action
-            android:id="@+id/action_itemViewNote_to_notesFragment"
-            app:destination="@id/notesFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_item_view_note" />
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.example.finalproject.AddNoteFragment"
         android:label="AddNoteFragment"
-        tools:layout="@layout/fragment_add_note" >
-        <action
-            android:id="@+id/action_addNoteFragment_to_itemViewNote"
-            app:destination="@id/itemViewNote" />
-    </fragment>
+        tools:layout="@layout/fragment_add_note" />
     <activity
         android:id="@+id/mainActivity"
         android:name="com.example.finalproject.MainActivity"
