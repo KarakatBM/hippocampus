@@ -68,6 +68,12 @@ class PomodoroFragment : Fragment() {
             handleSkipButton()
         }
 
+//       TODO: Fix the problems  [pathway 9.2.4]
+
+//        Set the current activity as the lifecycle owner of the binding
+//        binding!!.setLifecycleOwner(this)
+//        binding!!.pomodoroViewModel = pomodoroViewModel
+
         return binding!!.root
     }
 
