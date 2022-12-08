@@ -10,10 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject.R
 import com.example.finalproject.database.Notes
 
-class NotesAdapter(
-	val context: Context,
-	val noteClickDeleteInterface: NoteClickDeleteInterface,
-	val noteClickInterface: NoteClickInterface): RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
+class NotesAdapter(val context: Context): RecyclerView.Adapter<NotesAdapter.ViewHolder>() {
 
 	private val allNotes = ArrayList<Notes>()
 
@@ -32,17 +29,17 @@ class NotesAdapter(
 	}
 
 
-	override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+	override fun onBindViewHolder(holder: ViewHolder, id: Int) {
 
-		holder.noteText.setText(allNotes.get(position).noteTitle)
-		holder.dateText.setText("Last Updated : " + allNotes.get(position).timeStamp)
+		holder.noteText.setText(allNotes.get(id).noteTitle)
+		holder.dateText.setText("Last Updated : " + allNotes.get(id).timeStamp)
 
 		holder.deleteIcon.setOnClickListener {
-			noteClickDeleteInterface.onDeleteIconClick(allNotes.get(position))
+			onDeleteIconClick(allNotes.get(id))
 		}
 
 		holder.itemView.setOnClickListener {
-			noteClickInterface.onNoteClick(allNotes.get(position))
+			onNoteClick(allNotes.get(id))
 		}
 	}
 
@@ -50,10 +47,11 @@ class NotesAdapter(
 
 }
 
-interface NoteClickDeleteInterface {
-	fun onDeleteIconClick(note: Notes)
-}
+	fun onDeleteIconClick(note: Notes) {
 
-interface NoteClickInterface {
-	fun onNoteClick(note: Notes)
-}
+	}
+
+	fun onNoteClick(note: Notes) {
+
+	}
+
