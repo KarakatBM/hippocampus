@@ -16,7 +16,10 @@ import com.example.finalproject.databinding.FragmentPomodoroBinding
 import android.os.Handler
 import android.service.autofill.Validators.not
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
+import com.example.finalproject.database.PomodoroDatabase
 import com.example.finalproject.viewmodel.PomodoroViewModel
+import com.example.finalproject.viewmodel.PomodoroViewModelFactory
 import kotlin.time.Duration.Companion.seconds
 
 class PomodoroFragment : Fragment() {
@@ -32,6 +35,18 @@ class PomodoroFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         binding = FragmentPomodoroBinding.inflate(inflater, container, false)
+
+        val application = requireNotNull(this.activity).application
+
+        // Create an instance of the ViewModel Factory.
+        val dataSource = PomodoroDatabase.getInstance(application).pomodoroDatabaseDao
+        val viewModelFactory = PomodoroViewModelFactory(dataSource, application)
+
+        // Get a reference to the ViewModel associated with this fragment.
+        val pomodoroViewModel =
+            ViewModelProvider(
+                this, viewModelFactory).get(PomodoroViewModel::class.java)
+
 
         //initial timer 25 mins
         binding!!.startButton.setOnClickListener{
