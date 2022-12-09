@@ -40,6 +40,10 @@ class HomePageFragment : Fragment() {
             view.findNavController()
                 .navigate(R.id.action_homePageFragment_to_pomodoroFragment)
         }
+        binding!!.cardStatistics.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_homePageFragment_to_overviewFragment)
+        }
 
         return binding!!.root
         }

@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_pomodoroFragment"
             app:destination="@id/pomodoroFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
     </fragment>
 
     <!--    TODO: Delete placeholder, put add_folder_page instead -->
@@ -114,6 +117,10 @@
         android:name="com.example.finalproject.PomodoroFragment"
         android:label="PomodoroFragment"
         tools:layout = "@layout/fragment_pomodoro"/>
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.example.finalproject.overview.OverviewFragment"
+        android:label="OverviewFragment" />
 
 
 </navigation>
