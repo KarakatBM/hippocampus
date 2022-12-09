@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/note_text"
             android:layout_marginLeft="10dp"
-            android:layout_padding="3dp"
+
             android:layout_toLeftOf="@id/delete_icon"
             android:text="Updated At"
             android:textColor="@color/white"
