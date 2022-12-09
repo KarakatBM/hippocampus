@@ -7,6 +7,19 @@
 
     android:background="@color/gray_background">
 
+    <!-- Data to make available to the XML via data binding. In this case,
+         the whole ViewModel, so that we can access the LiveData,
+         click handlers, and state variables. -->
+
+    <!--suppress AndroidUnresolvableTag -->
+    <data>
+        <!--suppress AndroidUnresolvableTag -->
+        <variable
+            name="pomodoroViewModel"
+            type="com.example.android.finalproject.viewmodel.PomodoroViewModel"
+            tools:ignore="MissingPrefix" />
+    </data>
+
     <TextView
         android:id="@+id/keyscount"
         android:layout_width="wrap_content"

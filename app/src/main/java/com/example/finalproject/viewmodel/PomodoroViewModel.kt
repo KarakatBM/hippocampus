@@ -1,12 +1,17 @@
 package com.example.finalproject.viewmodel
 
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.finalproject.database.PomodoroDatabaseDao
 
 
-class PomodoroViewModel: ViewModel() {
+class PomodoroViewModel(
+    val database: PomodoroDatabaseDao,
+    application: Application) : AndroidViewModel(application) {
 
     private val pomodorosArray = arrayOf(1,3,4)
     private val restArray = arrayOf(5,10,15)
@@ -56,10 +61,10 @@ class PomodoroViewModel: ViewModel() {
     }
     fun decreaseTimer(){
         if(_seconds.value != 0){
-            this.decreaseSeconds()
+            decreaseSeconds()
         } else {
             _seconds.value = 59
-            this.decreaseMins()
+            decreaseMins()
         }
     }
     fun resetFocusTimer(){
