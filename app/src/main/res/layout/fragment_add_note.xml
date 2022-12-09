@@ -39,7 +39,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/titleinput"
+            android:id="@+id/title_input"
             android:hint="Title"
             android:textColor="@color/hookers_green"
             android:fontFamily="@font/poppinssemibold"
@@ -60,16 +60,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/descriptioninput"
-            android:fontFamily="@font/poppinssemibold"
-            android:hint="Description"
-            android:padding="8dp"
-            android:layout_margin="10dp"
-            android:lines="1"
-            android:textColor="@color/hookers_green"/>
+            <EditText
+                android:id="@+id/description_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/poppinssemibold"
+                android:hint="Description"
+                android:lines="1"
+                android:padding="8dp"
+                android:textColor="@color/hookers_green" />
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>

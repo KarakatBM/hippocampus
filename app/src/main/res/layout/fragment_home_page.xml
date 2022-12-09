@@ -196,7 +196,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsbold"
-                android:text="Pomodoro"
+                android:text="Todo"
                 android:textColor="@color/hookers_green"
                 android:textSize="15sp"
 
@@ -245,7 +245,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsbold"
-                android:text="Notes"
+                android:text="Mars"
                 android:textColor="@color/hookers_green"
                 android:textSize="15sp"
 
@@ -292,7 +292,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsbold"
-                android:text="Pomodoro"
+                android:text="About"
                 android:textColor="@color/hookers_green"
                 android:textSize="15sp"
 

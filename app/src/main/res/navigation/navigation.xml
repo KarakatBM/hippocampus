@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_homePageFragment_to_overviewFragment"
             app:destination="@id/overviewFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_fragmentTodo"
+            app:destination="@id/fragmentTodo" />
     </fragment>
 
     <!--    TODO: Delete placeholder, put add_folder_page instead -->
@@ -77,7 +80,17 @@
         android:id="@+id/itemViewNote"
         android:name="com.example.finalproject.ItemViewNote"
         android:label="ItemViewNote"
-        tools:layout="@layout/fragment_item_view_note" />
+        tools:layout="@layout/fragment_item_view_note" >
+        <argument
+            android:name="notedescription"
+            app:argType="string" />
+        <argument
+            android:name="notetitle"
+            app:argType="string" />
+        <argument
+            android:name="notedate"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.example.finalproject.AddNoteFragment"
@@ -120,7 +133,15 @@
     <fragment
         android:id="@+id/overviewFragment"
         android:name="com.example.finalproject.overview.OverviewFragment"
-        android:label="OverviewFragment" />
+        android:label="OverviewFragment" >
+        <action
+            android:id="@+id/action_overviewFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.finalproject.detail.DetailFragment"
+        android:label="DetailFragment" />
 
 
 </navigation>
