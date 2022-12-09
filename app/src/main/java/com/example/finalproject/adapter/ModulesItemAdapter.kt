@@ -28,9 +28,9 @@ class ModulesItemAdapter(private val context: Context, private val dataset: List
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-                holder.textView.text = context.resources.getString(item.stringResourceId)
-                holder.textView.setOnClickListener{
-                    val action = FoldersPageFragmentDirections.actionFoldersPageFragmentToFolderFragment()
+        holder.textView.text = context.resources.getString(item.stringResourceId)
+        holder.textView.setOnClickListener{
+            val action = FoldersPageFragmentDirections.actionFoldersPageFragmentToFolderFragment()
             holder.view.findNavController().navigate(action)
         }
 //        holder.textView.setOnClickListener{
