@@ -31,24 +31,17 @@ class HomePageFragment : Fragment() {
                 .navigate(R.id.action_homePageFragment_to_foldersPageFragment)
         }
 
-        //   TODO: Implement other handlers
-
         binding!!.cardNotes.setOnClickListener { view: View ->
-            binding!!.notes.setOnClickListener { view: View ->
-
-                view.findNavController()
+            view.findNavController()
                     .navigate(R.id.action_homePageFragment_to_notesFragment)
             }
 
-            binding!!.cardPomodoro.setOnClickListener { view: View ->
-                view.findNavController()
-                    .navigate(R.id.action_homePageFragment_to_pomodoroFragment)
-            }
-
-
+        binding!!.cardPomodoro.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_homePageFragment_to_pomodoroFragment)
         }
 
-            return binding!!.root
+        return binding!!.root
         }
     }
 
