@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.fragments
 
 
 
@@ -8,11 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.RecyclerView
+import com.example.finalproject.R
 import com.example.finalproject.data.DatasoureTodo
 import com.example.finalproject.databinding.FragmentTodoBinding
 
-class FragmentTodo : Fragment() {
+class TodoFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment

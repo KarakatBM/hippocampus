@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.fragments
 
 
 
@@ -7,12 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.finalproject.adapter.ModulesItemAdapter
-import com.example.finalproject.adapter.NoteItemAdapter
-import com.example.finalproject.data.DatasourceModules
-import com.example.finalproject.data.DatasourseNote
 import com.example.finalproject.databinding.FragmentItemViewNoteBinding
 
 

@@ -7,8 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.finalproject.FoldersPageFragment
-import com.example.finalproject.FoldersPageFragmentDirections
+import com.example.finalproject.fragments.FoldersPageFragmentDirections
 import com.example.finalproject.R
 import com.example.finalproject.model.Modules
 
@@ -33,7 +32,7 @@ class ModulesItemAdapter(private val context: Context, private val dataset: List
             val action = FoldersPageFragmentDirections.actionFoldersPageFragmentToFolderFragment()
             holder.view.findNavController().navigate(action)
         }
-//        holder.textView.setOnClickListener{
+//        holder.te0xtView.setOnClickListener{
 //            val action = FoldersPageFragmentDirections.action
 //        }
 //        val action = LetterListFragmentDirections.actionLetterListFragmentToWordListFragment(letter = holder.button.text.toString())

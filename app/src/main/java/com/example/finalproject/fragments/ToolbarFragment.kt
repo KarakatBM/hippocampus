@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.fragments
 
 
 
@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.finalproject.R
 
-class FlashcardFragment : Fragment() {
+class ToolbarFragment : Fragment() {
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_flashcard, container, false)
+        return inflater.inflate(R.layout.fragment_toolbar, container, false)
     }
 }

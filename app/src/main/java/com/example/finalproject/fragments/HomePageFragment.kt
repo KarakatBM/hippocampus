@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.fragments
 
 
 
@@ -7,9 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
-import com.example.finalproject.databinding.FragmentFolderBinding
+import com.example.finalproject.R
 import com.example.finalproject.databinding.FragmentHomePageBinding
 
 class HomePageFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.fragments
 
 
 
@@ -7,14 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject.adapter.ModuleInnerItemAdapter
-import com.example.finalproject.adapter.ModulesItemAdapter
 import com.example.finalproject.data.DatasourseModuleInner
 import com.example.finalproject.databinding.FragmentFolderBinding
-import com.example.finalproject.databinding.FragmentFoldersPageBinding
 
 class FolderFragment : Fragment() {
     private var binding: FragmentFolderBinding? = null

@@ -1,16 +1,14 @@
-package com.example.finalproject
+package com.example.finalproject.fragments
 
 
 
-import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.finalproject.R
 import com.example.finalproject.adapter.ModulesItemAdapter
 import com.example.finalproject.data.DatasourceModules
 import com.example.finalproject.databinding.FragmentFoldersPageBinding
@@ -36,7 +34,7 @@ class FoldersPageFragment : Fragment() {
         // Add OnClick Handler for Add Folder button
         binding!!.addModule.setOnClickListener{ view: View->
             view.findNavController()
-                .navigate(R.id.action_foldersPageFragment_to_placeholder) }
+                .navigate(FoldersPageFragmentDirections.actionFoldersPageFragmentToPlaceholder()) }
 
 //        TODO: Delete placeholder, put add_folder_page instead
         // Initialize data.

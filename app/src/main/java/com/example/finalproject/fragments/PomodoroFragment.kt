@@ -1,4 +1,4 @@
-package com.example.finalproject
+package com.example.finalproject.fragments
 
 
 
@@ -10,17 +10,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 
 import com.example.finalproject.databinding.FragmentPomodoroBinding
 import android.os.Handler
-import android.service.autofill.Validators.not
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import com.example.finalproject.R
 import com.example.finalproject.database.PomodoroDatabase
 import com.example.finalproject.viewmodel.PomodoroViewModel
 import com.example.finalproject.viewmodel.PomodoroViewModelFactory
-import kotlin.time.Duration.Companion.seconds
 
 class PomodoroFragment : Fragment() {
     private val viewModel: PomodoroViewModel by viewModels()
