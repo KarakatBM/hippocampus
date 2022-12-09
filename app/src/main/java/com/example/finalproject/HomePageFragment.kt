@@ -44,7 +44,14 @@ class HomePageFragment : Fragment() {
             view.findNavController()
                 .navigate(R.id.action_homePageFragment_to_overviewFragment)
         }
-
+        binding!!.cardStatistics.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_homePageFragment_to_overviewFragment)
+        }
+        binding!!.cardToDo.setOnClickListener { view: View ->
+            view.findNavController()
+                .navigate(R.id.action_homePageFragment_to_fragmentTodo)
+        }
         return binding!!.root
         }
     }
