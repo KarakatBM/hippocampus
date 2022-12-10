@@ -11,24 +11,24 @@ import kotlinx.coroutines.launch
 
 class NotesViewModel (application: Application): AndroidViewModel(application) {
 
-	val allNotes : LiveData<List<Notes>>
-	val repository : NotesRepository
+//	val allNotes : LiveData<List<Notes>>
+//	val repository : NotesRepository
 
-	init {
-		val dao = NotesDatabase.getDatabase(application).getNotesDao()
-		repository = NotesRepository(dao)
-		allNotes = repository.allNotes
-	}
+//	init {
+////		val dao = NotesDatabase.getInstance(application).notesDatabaseDao()
+////		repository = NotesRepository(dao)
+////		allNotes = repository.allNotes
+//	}
 
-	fun deleteNote (note: Notes) = viewModelScope.launch {
-		repository.delete(note)
-	}
+//	fun deleteNote (note: Notes) = viewModelScope.launch {
+//		repository.delete(note)
+//	}
+//
+//	fun updateNote(note: Notes) = viewModelScope.launch {
+//	repository.update(note)
+//	}
 
-	fun updateNote(note: Notes) = viewModelScope.launch {
-	repository.update(note)
-	}
-
-	fun addNote(note: Notes) = viewModelScope.launch{
-		repository.insert(note)
-	}
+//	fun addNote(note: Notes) = viewModelScope.launch{
+//		repository.insert(note)
+//	}
 }

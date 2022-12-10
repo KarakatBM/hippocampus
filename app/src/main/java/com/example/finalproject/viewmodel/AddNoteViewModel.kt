@@ -1,29 +1,38 @@
 package com.example.finalproject.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import android.provider.SyncStateContract.Helpers.insert
+import androidx.lifecycle.*
 import com.example.finalproject.database.Notes
+import com.example.finalproject.database.NotesDatabase
 import com.example.finalproject.database.NotesDatabaseDao
+import com.example.finalproject.database.NotesRepository
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
-class AddNoteViewModel(val database: NotesDatabaseDao): ViewModel(){
-     private suspend fun insert(note: Notes) {
-        database.insert(note)
-    }
-    fun insertIntoDatabase(id:Int, noteDescription:String, noteTitle:String) {
-        viewModelScope.launch {
-            val newNote = Notes(id, noteTitle,noteDescription, generateDate())
-            insert(newNote)
+class AddNoteViewModel(private  val repository : NotesRepository) : ViewModel() {
+
+
+    val allNotes: LiveData<List<Notes>> = repository.allNotes
+//    private val _isValid = MutableLiveData<Boolean>(false)
+//    val isValid: LiveData<Boolean> // To observe the value outside the ViewModel class.
+//        get() = _isValid
+
+//     private suspend fun insert(note: Notes) {
+////         _isValid.postValue(true)
+//         repository.insert(note)
+//    }
+//      fun insert(id:Int, noteDescription:String, noteTitle:String) {
+//        viewModelScope.launch {
+//            val newNote = Notes(id, noteTitle,noteDescription, generateDate())
+//            repository.insert(newNote)
+//        }
+
+        fun insert(note: Notes) = viewModelScope.launch {
+            repository.insert(note)
         }
+
     }
 
-    private fun generateDate(): String {
-        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-        val currentDate = sdf.format(Date())
-        return currentDate
-    }
-}
+
