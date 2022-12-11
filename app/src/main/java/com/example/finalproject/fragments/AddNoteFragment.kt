@@ -1,7 +1,6 @@
 package com.example.finalproject.fragments
 
 
-
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
@@ -22,65 +21,85 @@ import androidx.lifecycle.Observer
 import android.view.*
 import androidx.activity.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.finalproject.database.NotesApplication
-import com.example.finalproject.database.NotesDatabase
-import com.example.finalproject.database.NotesDatabaseDao
-import com.example.finalproject.database.PomodoroDatabase
+import com.example.finalproject.database.*
 import com.example.finalproject.viewmodel.AddNoteViewModelFactory
 import com.example.finalproject.viewmodel.PomodoroViewModel
 import com.example.finalproject.viewmodel.PomodoroViewModelFactory
-//import com.example.finalproject.database.NotesApplication
-class AddNoteFragment : Fragment() {
-    private var binding: FragmentAddNoteBinding? = null
+import java.text.SimpleDateFormat
+import java.util.*
+
 //    private val viewModel: AddNoteViewModel by viewModels()
 //private val viewModel by lazy {
 //    ViewModelProvider(this)[AddNoteViewModel::class.java]
 //}
 
 //private lateinit var viewModel: AddNoteViewModel
+//import com.example.finalproject.database.NotesApplication
 
-    companion object {
-        const val EXTRA_REPLY = "com.example.android.notelistsql.REPLY"
-    }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+class AddNoteFragment : Fragment() {
+    private var binding: FragmentAddNoteBinding? = null
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         // Inflate the layout for this fragment
         binding = FragmentAddNoteBinding.inflate(inflater, container, false)
 
 
-//        val application = requireNotNull(this.activity).application
+        val application = requireNotNull(this.activity).application
+
 //
 //        // Create an instance of the ViewModel Factory.
-//        val dataSource = NotesDatabase.getInstance(application).notesDatabaseDao
-//        val viewModelFactory = AddNoteViewModelFactory(dataSource, application)
+        val dataSource = NotesDatabase.getInstance(application).notesDatabaseDao()
+        val viewModelFactory = AddNoteViewModelFactory((application as NotesApplication).repository)
 //
 //        // Get a reference to the ViewModel associated with this fragment.
-//          viewModel =
-//            ViewModelProvider(
-//                this, viewModelFactory).get(AddNoteViewModel::class.java)
+        val viewModel =
+            ViewModelProvider(
+                this, viewModelFactory
+            ).get(AddNoteViewModel::class.java)
 
-        binding!!.saveButton.setOnClickListener{ view: View->
+        binding!!.saveButton.setOnClickListener { view: View ->
             val replyIntent = Intent()
-            if (TextUtils.isEmpty(binding!!.titleInput.text) || TextUtils.isEmpty(binding!!.descriptionInput.text) ) {
-                activity?.setResult(Activity.RESULT_CANCELED, replyIntent)
+            Log.i("ok", "Savebutton triggered")
+            if (TextUtils.isEmpty(binding!!.titleInput.text) || TextUtils.isEmpty(binding!!.descriptionInput.text)) {
+                Log.i("ok", "request canceled")
+
             } else {
-                val note = arrayListOf<String>(binding!!.titleInput.text.toString(), binding!!.descriptionInput.text.toString())
-                replyIntent.putExtra(EXTRA_REPLY, note)
-                activity?.setResult(Activity.RESULT_OK, replyIntent)
+                Log.i("ok", "request created")
+                val note = Notes(
+                    binding!!.titleInput.text.toString(),
+                    binding!!.descriptionInput.text.toString(),
+                    generateDate()
+                )
+                viewModel.insert(note)
+                viewModel.allNotes.observe(viewLifecycleOwner) { list ->
+                    for (x in list) {
+                        Log.i("ok", x.noteTitle)
+                    }
+                }
             }
-             activity?.getFragmentManager()?.popBackStack();
-//            getActivity()?.getFragmentManager()?.beginTransaction()?.remove(this as Fragment)?.commit();
-      //      viewModel.insertIntoDatabase(0, binding!!.titleInput.text.toString(), binding!!.descriptionInput.text.toString())
-              }
+        }
 
 
-
-
-
+        //            getActivity()?.getFragmentManager()?.beginTransaction()?.remove(this as Fragment)?.commit();
+        //      viewModel.insertIntoDatabase(0, binding!!.titleInput.text.toString(), binding!!.descriptionInput.text.toString())
         return binding!!.root
     }
+
+    private fun generateDate(): String {
+        val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+        val currentDate = sdf.format(Date())
+        return currentDate
+    }
+
+}
+
+
 //    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
 //        super.onViewCreated(itemView, savedInstanceState)
 //        viewModel.isValid.observe(viewLifecycleOwner
@@ -92,4 +111,3 @@ class AddNoteFragment : Fragment() {
 //        }
 //
 //    }
-}

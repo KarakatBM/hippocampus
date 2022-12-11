@@ -29,13 +29,13 @@ abstract class NotesDatabase : RoomDatabase() {
 //					notesDao.deleteAll()
 
 					// Add sample words.
-					var word = Notes(0,"1","2","23.06")
+					var word = Notes("1","2","23.06")
 					notesDao.insert(word)
-					word = Notes(1,"World!","k","k")
+					word = Notes("World!","k","k")
 					notesDao.insert(word)
 
 					// TODO: Add your own words!
-					word = Notes(2,"TODO!","desc","time")
+					word = Notes("TODO!","desc","time")
 					notesDao.insert(word)
 				}
 			}
@@ -46,37 +46,37 @@ abstract class NotesDatabase : RoomDatabase() {
 		@Volatile
 		private var INSTANCE: NotesDatabase? = null
 
-		fun getInstance(context: Context, scope: CoroutineScope): NotesDatabase {
-			synchronized(this) {
-				var instance = INSTANCE
-
-				if (instance == null) {
-					instance = Room.databaseBuilder(
-						context.applicationContext,
-						NotesDatabase::class.java,
-						"notes_database"
-					)
-						.addCallback(NotesDatabaseCallback(scope))
-						.build()
-					INSTANCE = instance
-				}
-				return instance
-			}
-		}
-
-//		fun getDatabase(context: Context): NotesDatabase {
-//			// if the INSTANCE is not null, then return it,
-//			// if it is, then create the database
-//			return INSTANCE ?: synchronized(this) {
-//				val instance = Room.databaseBuilder(
-//					context.applicationContext,
-//					NotesDatabase::class.java,
-//					"notes_database"
-//				).build()
-//				INSTANCE = instance
-//				// return instance
-//				instance
+//		fun getInstance(context: Context, scope: CoroutineScope): NotesDatabase {
+//			synchronized(this) {
+//				var instance = INSTANCE
+//
+//				if (instance == null) {
+//					instance = Room.databaseBuilder(
+//						context.applicationContext,
+//						NotesDatabase::class.java,
+//						"notes_database"
+//					)
+//						.addCallback(NotesDatabaseCallback(scope))
+//						.build()
+//					INSTANCE = instance
+//				}
+//				return instance
 //			}
 //		}
+
+		fun getInstance(context: Context): NotesDatabase {
+			// if the INSTANCE is not null, then return it,
+			// if it is, then create the database
+			return INSTANCE ?: synchronized(this) {
+				val instance = Room.databaseBuilder(
+					context.applicationContext,
+					NotesDatabase::class.java,
+					"notes_database"
+				).build()
+				INSTANCE = instance
+				// return instance
+				instance
+			}
+		}
 	}
 }

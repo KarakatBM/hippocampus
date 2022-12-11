@@ -17,6 +17,16 @@ buildscript {
         coroutine_version = '1.6.0'
         gradleVersion = '4.0.1'
         dataBindingCompilerVersion = gradleVersion
+
+        activityVersion = '1.4.0'
+        appCompatVersion = '1.4.0'
+
+        coreTestingVersion = '2.1.0'
+        lifecycleVersion = '2.4.0'
+
+        materialVersion = '1.4.0'
+
+
     }
 repositories {
     google()

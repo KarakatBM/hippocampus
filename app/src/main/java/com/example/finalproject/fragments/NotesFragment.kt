@@ -4,6 +4,7 @@ package com.example.finalproject.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,8 +27,9 @@ import kotlinx.android.synthetic.main.fragment_home_page.*
 
 class NotesFragment: Fragment() {
 
+    private lateinit var notesDao: NotesDatabaseDao
+    private lateinit var db: NotesDatabase
 
-   
     private var binding: FragmentNotesBinding? = null
 
     private lateinit var viewModel: NotesViewModel
@@ -69,6 +71,7 @@ class NotesFragment: Fragment() {
     }
     override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
 
+
         super.onViewCreated(itemView, savedInstanceState)
         val myDataset = DatasourseNote().loadnotes()
         binding!!
@@ -81,8 +84,8 @@ class NotesFragment: Fragment() {
         }
     }
 
+}
 
 //    fun onDeleteIconClick(note: Notes) {
 //        viewModel.deleteNote(note)
 //    }
-}

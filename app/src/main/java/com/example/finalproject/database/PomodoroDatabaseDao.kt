@@ -7,7 +7,7 @@ import androidx.room.Query
 @Dao
 interface PomodoroDatabaseDao {
     @Insert
-    fun insert(key: Keys)
+     fun insert(key: Keys)
 
     @Query("SELECT * from keys_table WHERE keyId = :key")
     fun get(key: Long): Keys?
