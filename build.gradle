@@ -11,8 +11,8 @@ buildscript {
         version_recyclerview = "1.1.0"
         version_glide = "4.8.0"
         navigationVersion = "2.5.3"
-        room_version = '2.4.2'
-        kotlin_version = '1.6.10'
+        room_version = '2.4.3'
+        kotlin_version = '1.7.10'
         archLifecycleVersion = '2.4.0'
         coroutine_version = '1.6.0'
         gradleVersion = '4.0.1'
@@ -28,18 +28,18 @@ buildscript {
 
 
     }
-repositories {
-    google()
-    mavenCentral()
-}
-dependencies {
-    classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
-    classpath 'com.android.tools.build:gradle:3.2.1'
-    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    classpath("gradle.plugin.se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.71.4"){
-        exclude group: "org.ow2.asm"
+    repositories {
+        google()
+        mavenCentral()
     }
-}
+    dependencies {
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath("gradle.plugin.se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.71.4") {
+            exclude group: "org.ow2.asm"
+        }
+    }
 }
 plugins {
     id 'com.android.application' version '7.3.0' apply false
