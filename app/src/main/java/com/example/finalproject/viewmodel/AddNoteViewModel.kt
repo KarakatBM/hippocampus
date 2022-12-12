@@ -32,6 +32,7 @@ class AddNoteViewModel(private  val repository : NotesRepository) : ViewModel() 
         fun insert(note: Notes) = viewModelScope.launch {
             repository.insert(note)
         }
+
     }
 
 

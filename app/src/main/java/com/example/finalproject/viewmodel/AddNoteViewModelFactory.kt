@@ -1,9 +1,8 @@
 package com.example.finalproject.viewmodel
 
-import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.finalproject.database.NotesDatabaseDao
+
 import com.example.finalproject.database.NotesRepository
 
 
